@@ -9,7 +9,6 @@ namespace Tourist.Server.Forms
 		public ClientsForm( )
 		{
 			InitializeComponent( );
-			
 		}
 
 		private void ClientsForm_Load( object sender, System.EventArgs e )
