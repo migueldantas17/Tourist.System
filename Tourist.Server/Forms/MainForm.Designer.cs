@@ -51,16 +51,20 @@
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.TimerClock = new System.Windows.Forms.Timer(this.components);
 			this.HeaderPanel = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
 			this.SubTitleLabel = new System.Windows.Forms.Label();
 			this.TitleLabel = new System.Windows.Forms.Label();
 			this.FooterPanel = new System.Windows.Forms.Panel();
 			this.BodyPanel = new System.Windows.Forms.Panel();
+			this.SideBarPanel = new System.Windows.Forms.Panel();
+			this.LogoffTile = new MetroFramework.Controls.MetroTile();
+			this.PrefrencesTile = new MetroFramework.Controls.MetroTile();
+			this.SearchTile = new MetroFramework.Controls.MetroTile();
 			this.MainPanel.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.ClockTile.SuspendLayout();
 			this.HeaderPanel.SuspendLayout();
 			this.BodyPanel.SuspendLayout();
+			this.SideBarPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// htmlToolTip1
@@ -83,7 +87,7 @@
 			this.MainPanel.HorizontalScrollbarBarColor = true;
 			this.MainPanel.HorizontalScrollbarHighlightOnWheel = false;
 			this.MainPanel.HorizontalScrollbarSize = 10;
-			this.MainPanel.Location = new System.Drawing.Point(149, 23);
+			this.MainPanel.Location = new System.Drawing.Point(121, 20);
 			this.MainPanel.Name = "MainPanel";
 			this.MainPanel.Size = new System.Drawing.Size(1121, 519);
 			this.MainPanel.Style = MetroFramework.MetroColorStyle.Purple;
@@ -338,20 +342,12 @@
 			this.HeaderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			this.HeaderPanel.Controls.Add(this.panel2);
 			this.HeaderPanel.Controls.Add(this.SubTitleLabel);
 			this.HeaderPanel.Controls.Add(this.TitleLabel);
 			this.HeaderPanel.Location = new System.Drawing.Point(0, 28);
 			this.HeaderPanel.Name = "HeaderPanel";
-			this.HeaderPanel.Size = new System.Drawing.Size(1368, 150);
+			this.HeaderPanel.Size = new System.Drawing.Size(1369, 150);
 			this.HeaderPanel.TabIndex = 11;
-			// 
-			// panel2
-			// 
-			this.panel2.Location = new System.Drawing.Point(562, 153);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(200, 32);
-			this.panel2.TabIndex = 11;
 			// 
 			// SubTitleLabel
 			// 
@@ -372,9 +368,9 @@
 			this.TitleLabel.ForeColor = System.Drawing.Color.White;
 			this.TitleLabel.Location = new System.Drawing.Point(23, 3);
 			this.TitleLabel.Name = "TitleLabel";
-			this.TitleLabel.Size = new System.Drawing.Size(235, 65);
+			this.TitleLabel.Size = new System.Drawing.Size(138, 65);
 			this.TitleLabel.TabIndex = 3;
-			this.TitleLabel.Text = "LogoTipo";
+			this.TitleLabel.Text = "Main";
 			// 
 			// FooterPanel
 			// 
@@ -383,7 +379,7 @@
 			this.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
 			this.FooterPanel.Location = new System.Drawing.Point(0, 751);
 			this.FooterPanel.Name = "FooterPanel";
-			this.FooterPanel.Size = new System.Drawing.Size(1368, 150);
+			this.FooterPanel.Size = new System.Drawing.Size(1369, 150);
 			this.FooterPanel.TabIndex = 12;
 			// 
 			// BodyPanel
@@ -395,14 +391,74 @@
 			this.BodyPanel.Controls.Add(this.MainPanel);
 			this.BodyPanel.Location = new System.Drawing.Point(0, 184);
 			this.BodyPanel.Name = "BodyPanel";
-			this.BodyPanel.Size = new System.Drawing.Size(1368, 561);
+			this.BodyPanel.Size = new System.Drawing.Size(1369, 561);
 			this.BodyPanel.TabIndex = 13;
+			// 
+			// SideBarPanel
+			// 
+			this.SideBarPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.SideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			this.SideBarPanel.Controls.Add(this.LogoffTile);
+			this.SideBarPanel.Controls.Add(this.PrefrencesTile);
+			this.SideBarPanel.Controls.Add(this.SearchTile);
+			this.SideBarPanel.Location = new System.Drawing.Point(1222, 28);
+			this.SideBarPanel.Name = "SideBarPanel";
+			this.SideBarPanel.Size = new System.Drawing.Size(150, 873);
+			this.SideBarPanel.TabIndex = 14;
+			this.SideBarPanel.Visible = false;
+			// 
+			// LogoffTile
+			// 
+			this.LogoffTile.ActiveControl = null;
+			this.LogoffTile.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.LogoffTile.Location = new System.Drawing.Point(0, 612);
+			this.LogoffTile.Name = "LogoffTile";
+			this.LogoffTile.Size = new System.Drawing.Size(144, 105);
+			this.LogoffTile.TabIndex = 0;
+			this.LogoffTile.Text = "LogOff";
+			this.LogoffTile.TileImage = global::Tourist.Server.Properties.Resources.PowerOff;
+			this.LogoffTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.LogoffTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.LogoffTile.UseSelectable = true;
+			this.LogoffTile.UseTileImage = true;
+			// 
+			// PrefrencesTile
+			// 
+			this.PrefrencesTile.ActiveControl = null;
+			this.PrefrencesTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.PrefrencesTile.Location = new System.Drawing.Point(3, 381);
+			this.PrefrencesTile.Name = "PrefrencesTile";
+			this.PrefrencesTile.Size = new System.Drawing.Size(141, 105);
+			this.PrefrencesTile.TabIndex = 0;
+			this.PrefrencesTile.Text = "Preferences";
+			this.PrefrencesTile.TileImage = global::Tourist.Server.Properties.Resources.preferences;
+			this.PrefrencesTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.PrefrencesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.PrefrencesTile.UseSelectable = true;
+			this.PrefrencesTile.UseTileImage = true;
+			// 
+			// SearchTile
+			// 
+			this.SearchTile.ActiveControl = null;
+			this.SearchTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.SearchTile.Location = new System.Drawing.Point(0, 156);
+			this.SearchTile.Name = "SearchTile";
+			this.SearchTile.Size = new System.Drawing.Size(144, 105);
+			this.SearchTile.TabIndex = 0;
+			this.SearchTile.Text = "Search";
+			this.SearchTile.TileImage = global::Tourist.Server.Properties.Resources.Magnifier;
+			this.SearchTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.SearchTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.SearchTile.UseSelectable = true;
+			this.SearchTile.UseTileImage = true;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1366, 900);
+			this.ClientSize = new System.Drawing.Size(1368, 900);
+			this.Controls.Add(this.SideBarPanel);
 			this.Controls.Add(this.BodyPanel);
 			this.Controls.Add(this.FooterPanel);
 			this.Controls.Add(this.HeaderPanel);
@@ -414,6 +470,7 @@
 			this.Resizable = false;
 			this.Style = MetroFramework.MetroColorStyle.White;
 			this.Load += new System.EventHandler(this.MainForm_Load);
+			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
 			this.MainPanel.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -422,6 +479,7 @@
 			this.HeaderPanel.ResumeLayout(false);
 			this.HeaderPanel.PerformLayout();
 			this.BodyPanel.ResumeLayout(false);
+			this.SideBarPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -450,11 +508,14 @@
 		private System.Windows.Forms.Label DayNumberLabel;
 		private System.Windows.Forms.Label MonthNameLabel;
 		private System.Windows.Forms.Panel HeaderPanel;
-		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label SubTitleLabel;
 		private System.Windows.Forms.Label TitleLabel;
 		private System.Windows.Forms.Panel FooterPanel;
 		private System.Windows.Forms.Panel BodyPanel;
+		private System.Windows.Forms.Panel SideBarPanel;
+		private MetroFramework.Controls.MetroTile LogoffTile;
+		private MetroFramework.Controls.MetroTile PrefrencesTile;
+		private MetroFramework.Controls.MetroTile SearchTile;
 	}
 }
 

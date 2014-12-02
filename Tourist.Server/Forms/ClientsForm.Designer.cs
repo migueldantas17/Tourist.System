@@ -28,30 +28,36 @@
 		/// </summary>
 		private void InitializeComponent( )
 		{
-			this.FooterPanel = new System.Windows.Forms.Panel();
 			this.HeaderPanel = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.SubTitleLabel = new System.Windows.Forms.Label();
 			this.TitleLabel = new System.Windows.Forms.Label();
 			this.BodyPanel = new System.Windows.Forms.Panel();
+			this.ClientsTabsControl = new MetroFramework.Controls.MetroTabControl();
+			this.OverViewTab = new MetroFramework.Controls.MetroTabPage();
+			this.BrowseTab = new MetroFramework.Controls.MetroTabPage();
+			this.FooterPanel = new System.Windows.Forms.Panel();
+			this.FowardPanel = new System.Windows.Forms.Panel();
+			this.HomePanel = new System.Windows.Forms.Panel();
+			this.BackPanel = new System.Windows.Forms.Panel();
+			this.ImagePanel = new System.Windows.Forms.Panel();
+			this.SideBarPanel = new System.Windows.Forms.Panel();
+			this.LogoffTile = new MetroFramework.Controls.MetroTile();
+			this.PrefrencesTile = new MetroFramework.Controls.MetroTile();
+			this.SearchTile = new MetroFramework.Controls.MetroTile();
 			this.HeaderPanel.SuspendLayout();
+			this.BodyPanel.SuspendLayout();
+			this.ClientsTabsControl.SuspendLayout();
+			this.FooterPanel.SuspendLayout();
+			this.SideBarPanel.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// FooterPanel
-			// 
-			this.FooterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			this.FooterPanel.Location = new System.Drawing.Point(-1, 751);
-			this.FooterPanel.Name = "FooterPanel";
-			this.FooterPanel.Size = new System.Drawing.Size(1368, 150);
-			this.FooterPanel.TabIndex = 15;
 			// 
 			// HeaderPanel
 			// 
 			this.HeaderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			this.HeaderPanel.Controls.Add(this.ImagePanel);
 			this.HeaderPanel.Controls.Add(this.panel2);
 			this.HeaderPanel.Controls.Add(this.SubTitleLabel);
 			this.HeaderPanel.Controls.Add(this.TitleLabel);
@@ -96,16 +102,175 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.BodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			this.BodyPanel.Controls.Add(this.ClientsTabsControl);
 			this.BodyPanel.Location = new System.Drawing.Point(-1, 184);
 			this.BodyPanel.Name = "BodyPanel";
 			this.BodyPanel.Size = new System.Drawing.Size(1368, 561);
 			this.BodyPanel.TabIndex = 16;
+			// 
+			// ClientsTabsControl
+			// 
+			this.ClientsTabsControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.ClientsTabsControl.Controls.Add(this.OverViewTab);
+			this.ClientsTabsControl.Controls.Add(this.BrowseTab);
+			this.ClientsTabsControl.FontSize = MetroFramework.MetroTabControlSize.Tall;
+			this.ClientsTabsControl.ItemSize = new System.Drawing.Size(150, 50);
+			this.ClientsTabsControl.Location = new System.Drawing.Point(16, 14);
+			this.ClientsTabsControl.Name = "ClientsTabsControl";
+			this.ClientsTabsControl.SelectedIndex = 0;
+			this.ClientsTabsControl.Size = new System.Drawing.Size(1338, 531);
+			this.ClientsTabsControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+			this.ClientsTabsControl.TabIndex = 0;
+			this.ClientsTabsControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.ClientsTabsControl.UseSelectable = true;
+			// 
+			// OverViewTab
+			// 
+			this.OverViewTab.HorizontalScrollbarBarColor = true;
+			this.OverViewTab.HorizontalScrollbarHighlightOnWheel = false;
+			this.OverViewTab.HorizontalScrollbarSize = 10;
+			this.OverViewTab.Location = new System.Drawing.Point(4, 54);
+			this.OverViewTab.Name = "OverViewTab";
+			this.OverViewTab.Size = new System.Drawing.Size(1330, 473);
+			this.OverViewTab.TabIndex = 0;
+			this.OverViewTab.Text = "Overview";
+			this.OverViewTab.VerticalScrollbarBarColor = true;
+			this.OverViewTab.VerticalScrollbarHighlightOnWheel = false;
+			this.OverViewTab.VerticalScrollbarSize = 10;
+			// 
+			// BrowseTab
+			// 
+			this.BrowseTab.HorizontalScrollbarBarColor = true;
+			this.BrowseTab.HorizontalScrollbarHighlightOnWheel = false;
+			this.BrowseTab.HorizontalScrollbarSize = 10;
+			this.BrowseTab.Location = new System.Drawing.Point(4, 54);
+			this.BrowseTab.Name = "BrowseTab";
+			this.BrowseTab.Size = new System.Drawing.Size(1330, 473);
+			this.BrowseTab.TabIndex = 1;
+			this.BrowseTab.Text = "Browse";
+			this.BrowseTab.VerticalScrollbarBarColor = true;
+			this.BrowseTab.VerticalScrollbarHighlightOnWheel = false;
+			this.BrowseTab.VerticalScrollbarSize = 10;
+			// 
+			// FooterPanel
+			// 
+			this.FooterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			this.FooterPanel.Controls.Add(this.FowardPanel);
+			this.FooterPanel.Controls.Add(this.HomePanel);
+			this.FooterPanel.Controls.Add(this.BackPanel);
+			this.FooterPanel.Location = new System.Drawing.Point(-1, 751);
+			this.FooterPanel.Name = "FooterPanel";
+			this.FooterPanel.Size = new System.Drawing.Size(1368, 150);
+			this.FooterPanel.TabIndex = 15;
+			// 
+			// FowardPanel
+			// 
+			this.FowardPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.FowardPanel.BackgroundImage = global::Tourist.Server.Properties.Resources.RightArrow;
+			this.FowardPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.FowardPanel.Location = new System.Drawing.Point(1261, 17);
+			this.FowardPanel.Name = "FowardPanel";
+			this.FowardPanel.Size = new System.Drawing.Size(83, 117);
+			this.FowardPanel.TabIndex = 1;
+			// 
+			// HomePanel
+			// 
+			this.HomePanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.HomePanel.BackgroundImage = global::Tourist.Server.Properties.Resources.Home;
+			this.HomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.HomePanel.Location = new System.Drawing.Point(682, 17);
+			this.HomePanel.Name = "HomePanel";
+			this.HomePanel.Size = new System.Drawing.Size(130, 117);
+			this.HomePanel.TabIndex = 2;
+			// 
+			// BackPanel
+			// 
+			this.BackPanel.BackgroundImage = global::Tourist.Server.Properties.Resources.LeftArrow;
+			this.BackPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.BackPanel.Location = new System.Drawing.Point(24, 17);
+			this.BackPanel.Name = "BackPanel";
+			this.BackPanel.Size = new System.Drawing.Size(85, 117);
+			this.BackPanel.TabIndex = 3;
+			// 
+			// ImagePanel
+			// 
+			this.ImagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.ImagePanel.BackgroundImage = global::Tourist.Server.Properties.Resources.clients;
+			this.ImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.ImagePanel.Location = new System.Drawing.Point(1140, 28);
+			this.ImagePanel.Name = "ImagePanel";
+			this.ImagePanel.Size = new System.Drawing.Size(204, 92);
+			this.ImagePanel.TabIndex = 13;
+			// 
+			// SideBarPanel
+			// 
+			this.SideBarPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.SideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			this.SideBarPanel.Controls.Add(this.LogoffTile);
+			this.SideBarPanel.Controls.Add(this.PrefrencesTile);
+			this.SideBarPanel.Controls.Add(this.SearchTile);
+			this.SideBarPanel.Location = new System.Drawing.Point(1217, 28);
+			this.SideBarPanel.Name = "SideBarPanel";
+			this.SideBarPanel.Size = new System.Drawing.Size(150, 873);
+			this.SideBarPanel.TabIndex = 17;
+			// 
+			// LogoffTile
+			// 
+			this.LogoffTile.ActiveControl = null;
+			this.LogoffTile.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.LogoffTile.Location = new System.Drawing.Point(0, 612);
+			this.LogoffTile.Name = "LogoffTile";
+			this.LogoffTile.Size = new System.Drawing.Size(144, 105);
+			this.LogoffTile.TabIndex = 0;
+			this.LogoffTile.Text = "LogOff";
+			this.LogoffTile.TileImage = global::Tourist.Server.Properties.Resources.PowerOff;
+			this.LogoffTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.LogoffTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.LogoffTile.UseSelectable = true;
+			this.LogoffTile.UseTileImage = true;
+			// 
+			// PrefrencesTile
+			// 
+			this.PrefrencesTile.ActiveControl = null;
+			this.PrefrencesTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.PrefrencesTile.Location = new System.Drawing.Point(3, 381);
+			this.PrefrencesTile.Name = "PrefrencesTile";
+			this.PrefrencesTile.Size = new System.Drawing.Size(141, 105);
+			this.PrefrencesTile.TabIndex = 0;
+			this.PrefrencesTile.Text = "Preferences";
+			this.PrefrencesTile.TileImage = global::Tourist.Server.Properties.Resources.preferences;
+			this.PrefrencesTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.PrefrencesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.PrefrencesTile.UseSelectable = true;
+			this.PrefrencesTile.UseTileImage = true;
+			// 
+			// SearchTile
+			// 
+			this.SearchTile.ActiveControl = null;
+			this.SearchTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.SearchTile.Location = new System.Drawing.Point(0, 156);
+			this.SearchTile.Name = "SearchTile";
+			this.SearchTile.Size = new System.Drawing.Size(144, 105);
+			this.SearchTile.TabIndex = 0;
+			this.SearchTile.Text = "Search";
+			this.SearchTile.TileImage = global::Tourist.Server.Properties.Resources.Magnifier;
+			this.SearchTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.SearchTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.SearchTile.UseSelectable = true;
+			this.SearchTile.UseTileImage = true;
 			// 
 			// ClientsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1366, 900);
+			this.Controls.Add(this.SideBarPanel);
 			this.Controls.Add(this.BodyPanel);
 			this.Controls.Add(this.FooterPanel);
 			this.Controls.Add(this.HeaderPanel);
@@ -115,18 +280,33 @@
 			this.Load += new System.EventHandler(this.ClientsForm_Load);
 			this.HeaderPanel.ResumeLayout(false);
 			this.HeaderPanel.PerformLayout();
+			this.BodyPanel.ResumeLayout(false);
+			this.ClientsTabsControl.ResumeLayout(false);
+			this.FooterPanel.ResumeLayout(false);
+			this.SideBarPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.Panel FooterPanel;
 		private System.Windows.Forms.Panel HeaderPanel;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label SubTitleLabel;
 		private System.Windows.Forms.Label TitleLabel;
 		private System.Windows.Forms.Panel BodyPanel;
+		private MetroFramework.Controls.MetroTabControl ClientsTabsControl;
+		private MetroFramework.Controls.MetroTabPage OverViewTab;
+		private MetroFramework.Controls.MetroTabPage BrowseTab;
+		private System.Windows.Forms.Panel ImagePanel;
+		private System.Windows.Forms.Panel FooterPanel;
+		private System.Windows.Forms.Panel FowardPanel;
+		private System.Windows.Forms.Panel HomePanel;
+		private System.Windows.Forms.Panel BackPanel;
+		private System.Windows.Forms.Panel SideBarPanel;
+		private MetroFramework.Controls.MetroTile LogoffTile;
+		private MetroFramework.Controls.MetroTile PrefrencesTile;
+		private MetroFramework.Controls.MetroTile SearchTile;
 
 	}
 }

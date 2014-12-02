@@ -123,6 +123,12 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\LoginFrame.png" />
+    <None Include="Resources\LeftArrow.png" />
+    <None Include="Resources\Home.png" />
+    <None Include="Resources\RightArrow.png" />
+    <None Include="Resources\PowerOff.png" />
+    <None Include="Resources\Magnifier.png" />
+    <None Include="Resources\preferences.png" />
     <Content Include="Resources\unlock.png" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\Message.png" />

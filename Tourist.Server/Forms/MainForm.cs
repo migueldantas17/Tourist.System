@@ -27,18 +27,6 @@ namespace Tourist.Server.Forms
 			Size = new Size( x, y );
 		}
 
-		/* Anchor none;
-		private void SetMainPanelPosition( )
-		{
-			//Width = Screen.PrimaryScreen.WorkingArea.Width;
-			//Height = Screen.PrimaryScreen.WorkingArea.Height;
-
-			int mX = ( Width - MainPanel.Width ) / 2;
-			int mY = ( Height - MainPanel.Height ) / 2;
-			MainPanel.Location = new Point( mX, mY );
-		}
-		*/
-
 		private void TimerClock_Tick( object sender, EventArgs e )
 		{
 
@@ -87,6 +75,18 @@ namespace Tourist.Server.Forms
 			clients.Show();
 		}
 
+		//ver melhor 
+		private void MainForm_MouseMove( object sender, MouseEventArgs e )
+		{
+			int x = SideBarPanel.Location.X;
+			int y = SideBarPanel.Location.Y;
 
+			if (x <= e.X && y <= e.Y)
+				SideBarPanel.Visible = true;
+			else
+				SideBarPanel.Visible = false;	
+		}
+
+	
 	}
 }
