@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using Transitions;
 
 namespace Tourist.Server.Forms
 {
@@ -17,6 +18,7 @@ namespace Tourist.Server.Forms
 		{
 			SetFullScreen( );
 			TimerClock.Start( );//conta segundos relogio
+
 		}
 
 		private void SetFullScreen( )
@@ -32,16 +34,16 @@ namespace Tourist.Server.Forms
 
 			ClockLabel.Text = DateTime.Now.ToString( "HH:mm:ss" );
 
-			if ( DateTime.Today.Hour >= 12 && DateTime.Today.Minute >= 0 )
+			if ( DateTime.Now.Hour >= 12 && DateTime.Now.Minute >= 0 )
 				AmPmLabel.Text = "PM";
 			else
 				AmPmLabel.Text = "AM";
 
-			if (DateTime.Today.Day < 10)
+			if ( DateTime.Today.Day < 10 )
 				DayNumberLabel.Text = "0" + DateTime.Today.Day;
-			else 
-				DayNumberLabel.Text = DateTime.Today.Day.ToString();
-			
+			else
+				DayNumberLabel.Text = DateTime.Today.Day.ToString( );
+
 
 			DayOfWeekLabel.Text = DateTime.Today.DayOfWeek.ToString( );
 			MonthNameLabel.Text = MonthsName( DateTime.Today.Month );
@@ -71,22 +73,35 @@ namespace Tourist.Server.Forms
 
 		private void ClientsTile_Click( object sender, EventArgs e )
 		{
-			ClientsForm clients = new ClientsForm();
-			clients.Show();
+			ClientsForm clients = new ClientsForm( );
+			clients.Show( );
 		}
 
-		//ver melhor 
-		private void MainForm_MouseMove( object sender, MouseEventArgs e )
+		private void BodyPanel_MouseMove( object sender, MouseEventArgs e )
 		{
-			int x = SideBarPanel.Location.X;
+			
+			int x = SideBarPanel.Location.X - SideBarPanel.Width;
+			// como esta escondido é preciso subtrarir o width do panel
 			int y = SideBarPanel.Location.Y;
-
-			if (x <= e.X && y <= e.Y)
+			
+			if ( x <= e.X || ( x <= e.X && y <= e.Y ) )
+			{
 				SideBarPanel.Visible = true;
+				
+				Transition t = new Transition( new TransitionType_Linear( 750 ) );
+				t.add( SideBarPanel, "Left", ( Width - SideBarPanel.Width ) );
+				t.run( );
+
+			}
 			else
-				SideBarPanel.Visible = false;	
+			{
+				SideBarPanel.Visible = false;
+				
+				Transition t = new Transition( new TransitionType_Linear( 1 ) );
+				t.add( SideBarPanel, "Left", ( Width - 1 ) );
+				t.run( );
+			}
 		}
 
-	
 	}
 }

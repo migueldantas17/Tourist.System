@@ -53,12 +53,13 @@
 			this.HeaderPanel = new System.Windows.Forms.Panel();
 			this.SubTitleLabel = new System.Windows.Forms.Label();
 			this.TitleLabel = new System.Windows.Forms.Label();
+			this.ImagePanel = new System.Windows.Forms.Panel();
 			this.FooterPanel = new System.Windows.Forms.Panel();
 			this.BodyPanel = new System.Windows.Forms.Panel();
 			this.SideBarPanel = new System.Windows.Forms.Panel();
+			this.SearchTile = new MetroFramework.Controls.MetroTile();
 			this.LogoffTile = new MetroFramework.Controls.MetroTile();
 			this.PrefrencesTile = new MetroFramework.Controls.MetroTile();
-			this.SearchTile = new MetroFramework.Controls.MetroTile();
 			this.MainPanel.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.ClockTile.SuspendLayout();
@@ -344,6 +345,7 @@
 			this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
 			this.HeaderPanel.Controls.Add(this.SubTitleLabel);
 			this.HeaderPanel.Controls.Add(this.TitleLabel);
+			this.HeaderPanel.Controls.Add(this.ImagePanel);
 			this.HeaderPanel.Location = new System.Drawing.Point(0, 28);
 			this.HeaderPanel.Name = "HeaderPanel";
 			this.HeaderPanel.Size = new System.Drawing.Size(1369, 150);
@@ -372,6 +374,17 @@
 			this.TitleLabel.TabIndex = 3;
 			this.TitleLabel.Text = "Main";
 			// 
+			// ImagePanel
+			// 
+			this.ImagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.ImagePanel.BackgroundImage = global::Tourist.Server.Properties.Resources.Home;
+			this.ImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.ImagePanel.Location = new System.Drawing.Point(1211, 23);
+			this.ImagePanel.Name = "ImagePanel";
+			this.ImagePanel.Size = new System.Drawing.Size(134, 103);
+			this.ImagePanel.TabIndex = 14;
+			// 
 			// FooterPanel
 			// 
 			this.FooterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -388,38 +401,59 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.BodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			this.BodyPanel.Controls.Add(this.SideBarPanel);
 			this.BodyPanel.Controls.Add(this.MainPanel);
 			this.BodyPanel.Location = new System.Drawing.Point(0, 184);
 			this.BodyPanel.Name = "BodyPanel";
 			this.BodyPanel.Size = new System.Drawing.Size(1369, 561);
 			this.BodyPanel.TabIndex = 13;
+			this.BodyPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BodyPanel_MouseMove);
 			// 
 			// SideBarPanel
 			// 
 			this.SideBarPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.SideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			this.SideBarPanel.Controls.Add(this.SearchTile);
 			this.SideBarPanel.Controls.Add(this.LogoffTile);
 			this.SideBarPanel.Controls.Add(this.PrefrencesTile);
-			this.SideBarPanel.Controls.Add(this.SearchTile);
-			this.SideBarPanel.Location = new System.Drawing.Point(1222, 28);
+			this.SideBarPanel.Location = new System.Drawing.Point(1363, 0);
 			this.SideBarPanel.Name = "SideBarPanel";
-			this.SideBarPanel.Size = new System.Drawing.Size(150, 873);
+			this.SideBarPanel.Size = new System.Drawing.Size(150, 561);
 			this.SideBarPanel.TabIndex = 14;
 			this.SideBarPanel.Visible = false;
+			// 
+			// SearchTile
+			// 
+			this.SearchTile.ActiveControl = null;
+			this.SearchTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.SearchTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(219)))));
+			this.SearchTile.Location = new System.Drawing.Point(3, 24);
+			this.SearchTile.Name = "SearchTile";
+			this.SearchTile.Size = new System.Drawing.Size(144, 105);
+			this.SearchTile.TabIndex = 1;
+			this.SearchTile.Text = "Search";
+			this.SearchTile.TileImage = global::Tourist.Server.Properties.Resources.Magnifier;
+			this.SearchTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.SearchTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.SearchTile.UseCustomBackColor = true;
+			this.SearchTile.UseSelectable = true;
+			this.SearchTile.UseTileImage = true;
 			// 
 			// LogoffTile
 			// 
 			this.LogoffTile.ActiveControl = null;
 			this.LogoffTile.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.LogoffTile.Location = new System.Drawing.Point(0, 612);
+			this.LogoffTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(219)))));
+			this.LogoffTile.Location = new System.Drawing.Point(0, 433);
 			this.LogoffTile.Name = "LogoffTile";
-			this.LogoffTile.Size = new System.Drawing.Size(144, 105);
+			this.LogoffTile.Size = new System.Drawing.Size(150, 105);
 			this.LogoffTile.TabIndex = 0;
 			this.LogoffTile.Text = "LogOff";
 			this.LogoffTile.TileImage = global::Tourist.Server.Properties.Resources.PowerOff;
 			this.LogoffTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.LogoffTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.LogoffTile.UseCustomBackColor = true;
 			this.LogoffTile.UseSelectable = true;
 			this.LogoffTile.UseTileImage = true;
 			// 
@@ -427,38 +461,24 @@
 			// 
 			this.PrefrencesTile.ActiveControl = null;
 			this.PrefrencesTile.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.PrefrencesTile.Location = new System.Drawing.Point(3, 381);
+			this.PrefrencesTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(219)))));
+			this.PrefrencesTile.Location = new System.Drawing.Point(0, 227);
 			this.PrefrencesTile.Name = "PrefrencesTile";
-			this.PrefrencesTile.Size = new System.Drawing.Size(141, 105);
+			this.PrefrencesTile.Size = new System.Drawing.Size(150, 105);
 			this.PrefrencesTile.TabIndex = 0;
 			this.PrefrencesTile.Text = "Preferences";
 			this.PrefrencesTile.TileImage = global::Tourist.Server.Properties.Resources.preferences;
 			this.PrefrencesTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.PrefrencesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+			this.PrefrencesTile.UseCustomBackColor = true;
 			this.PrefrencesTile.UseSelectable = true;
 			this.PrefrencesTile.UseTileImage = true;
-			// 
-			// SearchTile
-			// 
-			this.SearchTile.ActiveControl = null;
-			this.SearchTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.SearchTile.Location = new System.Drawing.Point(0, 156);
-			this.SearchTile.Name = "SearchTile";
-			this.SearchTile.Size = new System.Drawing.Size(144, 105);
-			this.SearchTile.TabIndex = 0;
-			this.SearchTile.Text = "Search";
-			this.SearchTile.TileImage = global::Tourist.Server.Properties.Resources.Magnifier;
-			this.SearchTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.SearchTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-			this.SearchTile.UseSelectable = true;
-			this.SearchTile.UseTileImage = true;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1368, 900);
-			this.Controls.Add(this.SideBarPanel);
 			this.Controls.Add(this.BodyPanel);
 			this.Controls.Add(this.FooterPanel);
 			this.Controls.Add(this.HeaderPanel);
@@ -470,7 +490,6 @@
 			this.Resizable = false;
 			this.Style = MetroFramework.MetroColorStyle.White;
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
 			this.MainPanel.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -515,6 +534,7 @@
 		private System.Windows.Forms.Panel SideBarPanel;
 		private MetroFramework.Controls.MetroTile LogoffTile;
 		private MetroFramework.Controls.MetroTile PrefrencesTile;
+		private System.Windows.Forms.Panel ImagePanel;
 		private MetroFramework.Controls.MetroTile SearchTile;
 	}
 }

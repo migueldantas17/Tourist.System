@@ -28,7 +28,11 @@
 		/// </summary>
 		private void InitializeComponent( )
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.HeaderPanel = new System.Windows.Forms.Panel();
+			this.ImagePanel = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.SubTitleLabel = new System.Windows.Forms.Label();
 			this.TitleLabel = new System.Windows.Forms.Label();
@@ -40,16 +44,22 @@
 			this.FowardPanel = new System.Windows.Forms.Panel();
 			this.HomePanel = new System.Windows.Forms.Panel();
 			this.BackPanel = new System.Windows.Forms.Panel();
-			this.ImagePanel = new System.Windows.Forms.Panel();
-			this.SideBarPanel = new System.Windows.Forms.Panel();
-			this.LogoffTile = new MetroFramework.Controls.MetroTile();
-			this.PrefrencesTile = new MetroFramework.Controls.MetroTile();
-			this.SearchTile = new MetroFramework.Controls.MetroTile();
+			this.ClientsOverView = new MetroFramework.Controls.MetroGrid();
+			this.ClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientBirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientFN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientPhoneContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientLastReservationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ClientNumberOfReservations = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.HeaderPanel.SuspendLayout();
 			this.BodyPanel.SuspendLayout();
 			this.ClientsTabsControl.SuspendLayout();
+			this.OverViewTab.SuspendLayout();
 			this.FooterPanel.SuspendLayout();
-			this.SideBarPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ClientsOverView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// HeaderPanel
@@ -65,6 +75,17 @@
 			this.HeaderPanel.Name = "HeaderPanel";
 			this.HeaderPanel.Size = new System.Drawing.Size(1368, 150);
 			this.HeaderPanel.TabIndex = 14;
+			// 
+			// ImagePanel
+			// 
+			this.ImagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.ImagePanel.BackgroundImage = global::Tourist.Server.Properties.Resources.clients;
+			this.ImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.ImagePanel.Location = new System.Drawing.Point(1140, 28);
+			this.ImagePanel.Name = "ImagePanel";
+			this.ImagePanel.Size = new System.Drawing.Size(204, 92);
+			this.ImagePanel.TabIndex = 13;
 			// 
 			// panel2
 			// 
@@ -117,10 +138,10 @@
 			this.ClientsTabsControl.Controls.Add(this.BrowseTab);
 			this.ClientsTabsControl.FontSize = MetroFramework.MetroTabControlSize.Tall;
 			this.ClientsTabsControl.ItemSize = new System.Drawing.Size(150, 50);
-			this.ClientsTabsControl.Location = new System.Drawing.Point(16, 14);
+			this.ClientsTabsControl.Location = new System.Drawing.Point(24, 14);
 			this.ClientsTabsControl.Name = "ClientsTabsControl";
 			this.ClientsTabsControl.SelectedIndex = 0;
-			this.ClientsTabsControl.Size = new System.Drawing.Size(1338, 531);
+			this.ClientsTabsControl.Size = new System.Drawing.Size(1320, 531);
 			this.ClientsTabsControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
 			this.ClientsTabsControl.TabIndex = 0;
 			this.ClientsTabsControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,12 +149,13 @@
 			// 
 			// OverViewTab
 			// 
+			this.OverViewTab.Controls.Add(this.ClientsOverView);
 			this.OverViewTab.HorizontalScrollbarBarColor = true;
 			this.OverViewTab.HorizontalScrollbarHighlightOnWheel = false;
 			this.OverViewTab.HorizontalScrollbarSize = 10;
 			this.OverViewTab.Location = new System.Drawing.Point(4, 54);
 			this.OverViewTab.Name = "OverViewTab";
-			this.OverViewTab.Size = new System.Drawing.Size(1330, 473);
+			this.OverViewTab.Size = new System.Drawing.Size(1312, 473);
 			this.OverViewTab.TabIndex = 0;
 			this.OverViewTab.Text = "Overview";
 			this.OverViewTab.VerticalScrollbarBarColor = true;
@@ -196,81 +218,111 @@
 			this.BackPanel.Size = new System.Drawing.Size(85, 117);
 			this.BackPanel.TabIndex = 3;
 			// 
-			// ImagePanel
+			// ClientsOverView
 			// 
-			this.ImagePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.ImagePanel.BackgroundImage = global::Tourist.Server.Properties.Resources.clients;
-			this.ImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ImagePanel.Location = new System.Drawing.Point(1140, 28);
-			this.ImagePanel.Name = "ImagePanel";
-			this.ImagePanel.Size = new System.Drawing.Size(204, 92);
-			this.ImagePanel.TabIndex = 13;
+			this.ClientsOverView.AllowUserToResizeRows = false;
+			this.ClientsOverView.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.ClientsOverView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.ClientsOverView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.ClientsOverView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+			this.ClientsOverView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.ClientsOverView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this.ClientsOverView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.ClientsOverView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientID,
+            this.ClientName,
+            this.ClientBirthDate,
+            this.ClientGender,
+            this.ClientCity,
+            this.ClientFN,
+            this.ClientPhoneContact,
+            this.ClientLastReservationDate,
+            this.ClientNumberOfReservations});
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.ClientsOverView.DefaultCellStyle = dataGridViewCellStyle2;
+			this.ClientsOverView.EnableHeadersVisualStyles = false;
+			this.ClientsOverView.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ClientsOverView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.ClientsOverView.Location = new System.Drawing.Point(11, 42);
+			this.ClientsOverView.Name = "ClientsOverView";
+			this.ClientsOverView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.ClientsOverView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			this.ClientsOverView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.ClientsOverView.RowTemplate.Height = 24;
+			this.ClientsOverView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.ClientsOverView.Size = new System.Drawing.Size(1285, 428);
+			this.ClientsOverView.TabIndex = 2;
 			// 
-			// SideBarPanel
+			// ClientID
 			// 
-			this.SideBarPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.SideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			this.SideBarPanel.Controls.Add(this.LogoffTile);
-			this.SideBarPanel.Controls.Add(this.PrefrencesTile);
-			this.SideBarPanel.Controls.Add(this.SearchTile);
-			this.SideBarPanel.Location = new System.Drawing.Point(1217, 28);
-			this.SideBarPanel.Name = "SideBarPanel";
-			this.SideBarPanel.Size = new System.Drawing.Size(150, 873);
-			this.SideBarPanel.TabIndex = 17;
+			this.ClientID.HeaderText = "Client ID";
+			this.ClientID.Name = "ClientID";
 			// 
-			// LogoffTile
+			// ClientName
 			// 
-			this.LogoffTile.ActiveControl = null;
-			this.LogoffTile.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.LogoffTile.Location = new System.Drawing.Point(0, 612);
-			this.LogoffTile.Name = "LogoffTile";
-			this.LogoffTile.Size = new System.Drawing.Size(144, 105);
-			this.LogoffTile.TabIndex = 0;
-			this.LogoffTile.Text = "LogOff";
-			this.LogoffTile.TileImage = global::Tourist.Server.Properties.Resources.PowerOff;
-			this.LogoffTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.LogoffTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-			this.LogoffTile.UseSelectable = true;
-			this.LogoffTile.UseTileImage = true;
+			this.ClientName.HeaderText = "Client Name";
+			this.ClientName.Name = "ClientName";
 			// 
-			// PrefrencesTile
+			// ClientBirthDate
 			// 
-			this.PrefrencesTile.ActiveControl = null;
-			this.PrefrencesTile.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.PrefrencesTile.Location = new System.Drawing.Point(3, 381);
-			this.PrefrencesTile.Name = "PrefrencesTile";
-			this.PrefrencesTile.Size = new System.Drawing.Size(141, 105);
-			this.PrefrencesTile.TabIndex = 0;
-			this.PrefrencesTile.Text = "Preferences";
-			this.PrefrencesTile.TileImage = global::Tourist.Server.Properties.Resources.preferences;
-			this.PrefrencesTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.PrefrencesTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-			this.PrefrencesTile.UseSelectable = true;
-			this.PrefrencesTile.UseTileImage = true;
+			this.ClientBirthDate.HeaderText = "Date of Birth";
+			this.ClientBirthDate.Name = "ClientBirthDate";
 			// 
-			// SearchTile
+			// ClientGender
 			// 
-			this.SearchTile.ActiveControl = null;
-			this.SearchTile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.SearchTile.Location = new System.Drawing.Point(0, 156);
-			this.SearchTile.Name = "SearchTile";
-			this.SearchTile.Size = new System.Drawing.Size(144, 105);
-			this.SearchTile.TabIndex = 0;
-			this.SearchTile.Text = "Search";
-			this.SearchTile.TileImage = global::Tourist.Server.Properties.Resources.Magnifier;
-			this.SearchTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.SearchTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-			this.SearchTile.UseSelectable = true;
-			this.SearchTile.UseTileImage = true;
+			this.ClientGender.HeaderText = "Gender";
+			this.ClientGender.Name = "ClientGender";
+			// 
+			// ClientCity
+			// 
+			this.ClientCity.HeaderText = "City";
+			this.ClientCity.Name = "ClientCity";
+			// 
+			// ClientFN
+			// 
+			this.ClientFN.HeaderText = "Fiscal Number";
+			this.ClientFN.Name = "ClientFN";
+			// 
+			// ClientPhoneContact
+			// 
+			this.ClientPhoneContact.HeaderText = "Conctact Number";
+			this.ClientPhoneContact.Name = "ClientPhoneContact";
+			// 
+			// ClientLastReservationDate
+			// 
+			this.ClientLastReservationDate.HeaderText = "Last Reservation Date";
+			this.ClientLastReservationDate.Name = "ClientLastReservationDate";
+			// 
+			// ClientNumberOfReservations
+			// 
+			this.ClientNumberOfReservations.HeaderText = "Number of Reservations";
+			this.ClientNumberOfReservations.Name = "ClientNumberOfReservations";
 			// 
 			// ClientsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1366, 900);
-			this.Controls.Add(this.SideBarPanel);
 			this.Controls.Add(this.BodyPanel);
 			this.Controls.Add(this.FooterPanel);
 			this.Controls.Add(this.HeaderPanel);
@@ -282,8 +334,9 @@
 			this.HeaderPanel.PerformLayout();
 			this.BodyPanel.ResumeLayout(false);
 			this.ClientsTabsControl.ResumeLayout(false);
+			this.OverViewTab.ResumeLayout(false);
 			this.FooterPanel.ResumeLayout(false);
-			this.SideBarPanel.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.ClientsOverView)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -303,10 +356,16 @@
 		private System.Windows.Forms.Panel FowardPanel;
 		private System.Windows.Forms.Panel HomePanel;
 		private System.Windows.Forms.Panel BackPanel;
-		private System.Windows.Forms.Panel SideBarPanel;
-		private MetroFramework.Controls.MetroTile LogoffTile;
-		private MetroFramework.Controls.MetroTile PrefrencesTile;
-		private MetroFramework.Controls.MetroTile SearchTile;
+		private MetroFramework.Controls.MetroGrid ClientsOverView;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientID;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientBirthDate;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientGender;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientCity;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientFN;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientPhoneContact;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientLastReservationDate;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ClientNumberOfReservations;
 
 	}
 }
